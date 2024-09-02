@@ -8,6 +8,8 @@ namespace Api.Migrations
     public partial class CreatingContactTable : Migration
     {
         /// <inheritdoc />
+        /// Deixamos o entity framework criar nossa tabela do zero, pois assim ele tem mais controle através das suas funções, evitando possíveis complicações futuras.
+        /// para que esse código se reflita no nosso banco de dados precisamos usar o comando de atualização no nosso terminal .> dotnet-ef database update
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(

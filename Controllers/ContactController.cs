@@ -9,6 +9,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Api.Controllers
 {
+    //Ponto de entrada dos nossos métodos Http
+
     [ApiController]
     [Route("[controller]")]
     public class ContactController : ControllerBase
@@ -31,6 +33,7 @@ namespace Api.Controllers
             }
             await _scheduleContext.AddAsync(contact); 
             await _scheduleContext.SaveChangesAsync();
+            //adiciona a rota que o usuário pode acessar para obter o registro criado
             return CreatedAtAction(nameof(GetContactById), new {id = contact.Id}, contact);
         }
 
@@ -103,7 +106,7 @@ namespace Api.Controllers
             var contact = await _scheduleContext.Contact.FindAsync(id);
             if(contact == null)
                 return  NotFound();
-                
+
             _scheduleContext.Contact.Remove(contact);
            await  _scheduleContext.SaveChangesAsync();
             return NoContent();

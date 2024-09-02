@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Api.Entities
 {
+    // Representa uma classe para ser manipulada pela Api e ao mesmo tempo represeta uma tabela no bando de dados.
     public class Contact
     {
         public int Id  { get; set; }

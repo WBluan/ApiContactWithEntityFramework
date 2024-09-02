@@ -2,8 +2,8 @@
 
 # ASP.NET Core
 wwwroot/
-appsettings.json
-appsettings.Development.json
+# appsettings.json
+# appsettings.Development.json
 
 # .NET Core
 project.lock.json

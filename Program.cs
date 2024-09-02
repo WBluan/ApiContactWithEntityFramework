@@ -2,8 +2,12 @@ using Api.Context;
 using Api.Entities;
 using Microsoft.EntityFrameworkCore;
 
+
 var builder = WebApplication.CreateBuilder(args);
+
 //Adiciona um dbcontext do tipo agenda e passa algumas opções para dentro dele
+//passamos o options para dentro do contrutor do context que passa para o DbContext
+//usamos a opção do sqlserver e passamos a string de configuraçao disponivel no arquivo json de configuraçoes
 builder.Services.AddDbContext<ScheduleContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("StandardConnection")));
     
